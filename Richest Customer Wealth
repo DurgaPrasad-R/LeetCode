@@ -1,0 +1,18 @@
+class Solution {
+    public int maximumWealth(int[][] accounts) {
+        int max = 1;
+        for(int[] arr:accounts){
+            if(sum1(arr)>max){
+                max = sum1(arr);
+            }
+        }
+        return(max);
+    }
+    public int sum1(int[] arr){
+        int s = 0;
+        for(int i:arr){
+            s+=i;
+        }
+        return(s);
+    }
+}
