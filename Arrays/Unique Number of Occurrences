@@ -1,0 +1,24 @@
+class Solution {
+    public boolean uniqueOccurrences(int[] arr) {
+        HashSet<Integer> hset = new HashSet<>();
+        for(int i = 0;i<arr.length;i++){
+            int c = 1;
+            if(arr[i]!=-1001){
+                for(int j = i+1;j<arr.length;j++){
+                    if(arr[i] == arr[j]) {
+                        c += 1;
+                        arr[j] = -1001;
+                    }
+                }
+                if(hset.contains(c)){
+                    return(false);
+                }
+                else{
+                    hset.add(c);
+                }
+            }
+
+        }
+       return true;
+    }
+}
