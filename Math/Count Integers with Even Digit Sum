@@ -1,0 +1,20 @@
+class Solution {
+    public int countEven(int num) {
+        int c = 0;
+        for(int i = 2;i<=num;i++){
+            if(sumD(i)){
+                c+=1;
+            }
+        }
+        return c;
+    }
+    public boolean sumD(int n){
+        int temp = n,s = 0;
+        while(temp>0){
+            int r = temp%10;
+            s = s+r;
+            temp = temp/10;
+        }
+        return (s%2 == 0);
+    }
+}
