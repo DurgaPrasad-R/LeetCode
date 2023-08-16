@@ -1,0 +1,11 @@
+class Solution {
+    public int sumBase(int n, int k) {
+        int temp = n,s = 0;
+        while(temp>0){
+            int r = temp%k;
+            s = s+r;
+            temp = temp/k;
+        }
+        return s;
+    }
+}
