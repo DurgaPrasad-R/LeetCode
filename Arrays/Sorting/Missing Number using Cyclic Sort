@@ -1,0 +1,24 @@
+class Solution {
+    public int missingNumber(int[] nums) {
+        int i = 0,n = nums.length;
+        while (i<n) {
+            int correct = nums[i];
+            if (nums[i]<n && nums[i] != nums[correct]) {
+                swap(nums,i,correct);
+            } else {
+                i++;
+            }
+        }
+        for(i = 0;i<n;i++) {
+            if (nums[i]!=i){
+                return i;
+            }
+        }
+        return n;
+    }
+    public void swap(int[] nums,int f, int l) {
+        int temp = nums[f];
+        nums[f] = nums[l];
+        nums[l] = temp;
+    }
+}
