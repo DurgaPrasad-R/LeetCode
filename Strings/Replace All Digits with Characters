@@ -1,0 +1,15 @@
+class Solution {
+    public String replaceDigits(String s) {
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0;i<s.length();i++) {
+            if ((int)s.charAt(i) >= 48 && (int)s.charAt(i)<=57) {
+                String n = s.charAt(i)+"";
+                sb.append((char)(s.charAt(i-1)+Integer.parseInt(n)));
+            }
+            else {
+                sb.append(s.charAt(i));
+            }
+        }
+        return sb.toString();
+    }
+}
